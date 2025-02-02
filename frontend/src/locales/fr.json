@@ -2,5 +2,20 @@
   "header": {
     "title": "Mon Application",
     "language": "Langue"
+  },
+  "buttons": {
+    "openLogin": "Ouvrir le modal de connexion"
+  },
+  "auth": {
+    "loginTitle": "Connexion",
+    "email": "Email",
+    "password": "Mot de passe",
+    "login": "Se connecter",
+    "cancel": "Annuler",
+    "loginSuccess": "Connexion réussie!"
+  },
+  "errors": {
+    "missingFields": "Veuillez remplir tous les champs",
+    "invalidEmail": "Veuillez entrer une adresse e-mail valide."
   }
 }

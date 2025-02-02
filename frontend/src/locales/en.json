@@ -2,5 +2,20 @@
   "header": {
     "title": "My Application",
     "language": "Language"
+  },
+  "buttons": {
+    "openLogin": "Open Login Modal"
+  },
+  "auth": {
+    "loginTitle": "Login",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "cancel": "Cancel",
+    "loginSuccess": "Login successful!"
+  },
+  "errors": {
+    "missingFields": "Please fill out all fields.",
+    "invalidEmail": "Please enter a valid email address."
   }
 }

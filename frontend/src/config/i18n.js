@@ -7,18 +7,54 @@ i18n
     resources: {
       en: {
         translation: {
-          header: { title: 'My Application' }
+          header: {
+            title: "My Application"
+          },
+          buttons: {
+            openLogin: "Open Login Modal"
+          },
+          auth: {
+            loginTitle: "Login",
+            email: "Email",
+            password: "Password",
+            login: "Login",
+            cancel: "Cancel",
+            loginSuccess: "Login successful!"
+          },
+          errors: {
+            invalidEmail: "Please enter a valid email address.",
+            missingFields: "Please fill out all fields."
+          }
         }
       },
       fr: {
         translation: {
-          header: { title: 'Mon Application' }
+          header: {
+            title: "Mon Application"
+          },
+          buttons: {
+            openLogin: "Ouvrir le modal de connexion"
+          },
+          auth: {
+            loginTitle: "Connexion",
+            email: "Email",
+            password: "Mot de passe",
+            login: "Se connecter",
+            cancel: "Annuler",
+            loginSuccess: "Connexion réussie!"
+          },
+          errors: {
+            invalidEmail: "Veuillez entrer une adresse e-mail valide.",
+            missingFields: "Veuillez remplir tous les champs."
+          }
         }
       }
     },
-    lng: 'en',
-    fallbackLng: 'en',
-    interpolation: { escapeValue: false }
+    lng: "en",
+    fallbackLng: "en",
+    interpolation: {
+      escapeValue: false
+    }
   });
 
 export default i18n;

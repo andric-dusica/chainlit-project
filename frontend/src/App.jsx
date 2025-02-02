@@ -1,10 +1,12 @@
-// src/App.jsx
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import './config/i18n';
+import LoginModal from './components/LoginModal';
 import LanguageSwitcher from './components/LanguageSwitcher';
 
 function App() {
   const { t, i18n } = useTranslation();
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language');
@@ -20,7 +22,14 @@ function App() {
       </header>
       <main className="text-center">
         <h1 className="text-3xl font-bold">{t('header.title')}</h1>
+        <button
+          onClick={() => setIsLoginOpen(true)}
+          className="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-md"
+        >
+          {t('buttons.openLogin')}
+        </button>
       </main>
+      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
     </div>
   );
 }
