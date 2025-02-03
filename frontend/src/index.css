@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tooltip */
+.tooltip-wrapper {
+    position: relative; 
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -40px;
+    left: 58px;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+    z-index: 10;
+    white-space: nowrap;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.tooltip-wrapper:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip-btn:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip-light {
+    background-color: #e2e8f0;
+    color: #1a202c; 
+}
+
+.tooltip-dark {
+    background-color: #2d3748; 
+    color: #edf2f7; 
+}

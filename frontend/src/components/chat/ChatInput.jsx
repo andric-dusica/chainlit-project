@@ -24,14 +24,11 @@ function ChatInput({ onSend }) {
   };
 
   return (
-    <div
-      className={`absolute w-full px-4 ${
-        inputMoved ? 'bottom-0' : 'top-[50%] -translate-y-1/2'
-      }`}
-    >
-      <div className={`flex items-center space-x-2 h-[100px] rounded-md px-2 m-4 max-w-[850px] mx-auto ${
+    <div className={`absolute w-full px-4 ${inputMoved ? 'bottom-0' : 'top-[50%] -translate-y-1/2'}`}>
+        <div className={`flex items-center space-x-2 h-[100px] rounded-md px-2 m-4 max-w-[850px] mx-auto ${
             theme === 'dark' ? 'bg-gray-700' : 'bg-gray-300'
-          }`}>
+            }`}
+        >
         <input
           type="text"
           value={inputValue}
@@ -44,17 +41,41 @@ function ChatInput({ onSend }) {
               : 'text-black placeholder-gray-500'
           }`}
         />
-        <button
-          onClick={handleSend}
-          disabled={!inputValue.trim()}
-          className={`inline-flex items-center justify-center h-9 w-9 rounded-full ${
-            inputValue.trim()
-              ? 'bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-500'
-              : 'bg-gray-400 cursor-not-allowed'
-          }`}
-        >
-          <img src={sendMsgIcon} alt="Send message" className="h-6 w-6" />
-        </button>
+
+        <div className="relative group">
+          <button
+            onClick={handleSend}
+            disabled={!inputValue.trim()}
+            className={`inline-flex items-center justify-center h-9 w-9 rounded-full ${
+              inputValue.trim()
+                ? 'bg-blue-500 hover:bg-blue-400 focus:ring-2 focus:ring-blue-500'
+                : 'bg-gray-400 cursor-not-allowed'
+            }`}
+            aria-label={t('tooltips.send')}
+          >
+            <img src={sendMsgIcon} alt="Send message" className="h-6 w-6" />
+          </button>
+
+          {!inputValue.trim() && (
+            <span
+              className={`absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity w-[160px] ${
+                theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-200 text-black'
+              }`}
+            >
+              {t('tooltips.disabledSend')}
+            </span>
+          )}
+
+          {inputValue.trim() && (
+            <span
+              className={`absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity w-[130px] text-center ${
+                theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-200 text-black'
+              }`}
+            >
+              {t('tooltips.send')}
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

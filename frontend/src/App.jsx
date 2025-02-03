@@ -48,7 +48,7 @@ function App() {
           <h1 className="text-2xl sm:text-3xl font-bold">{t('header.title')}</h1>
           <button
             onClick={() => setIsLoginOpen(true)}
-            className="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-md text-sm sm:text-base"
+            className="mt-4 bg-blue-500 hover:bg-blue-400 text-white py-2 px-4 rounded-md text-sm sm:text-base"
           >
             {t('buttons.openLogin')}
           </button>

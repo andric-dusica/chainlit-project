@@ -37,6 +37,13 @@ i18n
           },
           copy: {
             copied: "Copied!"
+          },
+          tooltips: {
+            like: "Like message",
+            copy: "Copy message",
+            edit: "Edit message",
+            send: "Send message",
+            disabledSend: "Enter a message to send"
           }
         }
       },
@@ -72,6 +79,13 @@ i18n
           },
           copy: {
             copied: "Copié!"
+          },
+          tooltips: {
+            like: "Aimer le message",
+            copy: "Copier le message",
+            edit: "Modifier le message",
+            send: "Envoyer le message",
+            disabledSend: "Entrez un message à envoyer"
           }
         }
       }
@@ -83,5 +97,4 @@ i18n
     }
   });
 
-
-  export default i18n;
+export default i18n;

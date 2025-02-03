@@ -29,5 +29,12 @@
   },
   "messages": {
     "copySuccess": "Copié !"
+  },
+  "tooltips": {
+  "like": "Aimer le message",
+  "copy": "Copier le message",
+  "edit": "Modifier le message",
+  "send": "Envoyer le message",
+  "disabledSend": "Entrez un message à envoyer"
   }
 }
