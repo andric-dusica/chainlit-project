@@ -32,6 +32,7 @@
   },
   "tooltips": {
   "like": "Aimer le message",
+  "unlike": "Ne plus aimer le message",
   "copy": "Copier le message",
   "edit": "Modifier le message",
   "send": "Envoyer le message",

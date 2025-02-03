@@ -9,21 +9,24 @@ export const streamResponse = (setMessages) => {
         const currentWord = words[index];
   
         setMessages((prevMessages) => {
-          let updatedMessages = [...prevMessages];
+            let updatedMessages = [...prevMessages];
+            const lastMessage = updatedMessages[updatedMessages.length - 1];
           
-          if (updatedMessages.length > 0 && updatedMessages[updatedMessages.length - 1].sender === "server") {
-            updatedMessages[updatedMessages.length - 1].text += ` ${currentWord}`;
-          } else {
-            const newMessage = {
-              id: `server-${Date.now()}`,
-              sender: "server",
-              text: currentWord,
-            };
-            updatedMessages.push(newMessage);
-          }
-  
-          return updatedMessages;
-        });
+            if (lastMessage && lastMessage.sender === "server") {
+              const lastWords = lastMessage.text.split(" ");
+              if (lastWords[lastWords.length - 1] !== currentWord) {
+                lastMessage.text += ` ${currentWord}`;
+              }
+            } else {
+              updatedMessages.push({
+                id: `server-${Date.now()}`,
+                sender: "server",
+                text: currentWord,
+              });
+            }
+          
+            return updatedMessages;
+          });
   
         index++;
         if (index < words.length) {

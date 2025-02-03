@@ -34,7 +34,7 @@ function ThemeSwitcher({ currentTheme, onThemeChange }) {
       </button>
       {isOpen && (
         <ul
-          className={`absolute z-10 mt-2 rounded-md shadow-md w-32 sm:w-40 ${
+          className={`absolute left-[-100px] top-[51px] z-10 mt-2 rounded-md shadow-md w-32 sm:w-40 ${
             currentTheme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'
           }`}
         >
@@ -43,7 +43,7 @@ function ThemeSwitcher({ currentTheme, onThemeChange }) {
               onThemeChange('light');
               setIsOpen(false);
             }}
-            className={`px-3 py-1 sm:px-4 sm:py-2 cursor-pointer ${
+            className={`px-3 py-1 sm:px-4 sm:py-2 cursor-pointer rounded-t-md ${
               currentTheme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-200'
             }`}
           >
@@ -65,7 +65,7 @@ function ThemeSwitcher({ currentTheme, onThemeChange }) {
               onThemeChange('system');
               setIsOpen(false);
             }}
-            className={`px-3 py-1 sm:px-4 sm:py-2 cursor-pointer ${
+            className={`px-3 py-1 sm:px-4 sm:py-2 cursor-pointer rounded-b-md ${
               currentTheme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-200'
             }`}
           >

@@ -41,7 +41,7 @@ function Chat() {
   
   return (
     <div
-      className={`relative w-full h-[75vh] rounded-3xl flex flex-col ${
+      className={`relative w-full h-[75vh] rounded-3xl flex flex-col max-w-[850px] ${
         theme === 'dark' ? 'bg-transparent text-white' : 'bg-transparent text-black'
       }`}
     >

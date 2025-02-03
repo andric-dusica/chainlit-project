@@ -40,6 +40,7 @@ i18n
           },
           tooltips: {
             like: "Like message",
+            unlike: "Unlike message",
             copy: "Copy message",
             edit: "Edit message",
             send: "Send message",
@@ -82,6 +83,7 @@ i18n
           },
           tooltips: {
             like: "Aimer le message",
+            unlike: "Ne plus aimer le message",
             copy: "Copier le message",
             edit: "Modifier le message",
             send: "Envoyer le message",

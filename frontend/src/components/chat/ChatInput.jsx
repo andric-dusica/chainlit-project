@@ -1,45 +1,50 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 import sendMsgIcon from '../../assets/icons/send_msg.svg';
-import { ThemeContext } from '../../App';
 import { useTranslation } from 'react-i18next';
 
-function ChatInput({ onSend }) {
-  const { theme } = useContext(ThemeContext);
+
+function ChatInput({ onSend, theme }) {
+  const { t } = useTranslation();
   const [inputValue, setInputValue] = useState('');
   const [inputMoved, setInputMoved] = useState(false);
-  const { t } = useTranslation();
+  const textareaRef = useRef(null);
 
   const handleSend = () => {
     if (inputValue.trim() === '') return;
     onSend(inputValue);
     setInputValue('');
+    textareaRef.current.style.height = '40px'; 
     setInputMoved(true);
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();
       handleSend();
     }
   };
 
   return (
-    <div className={`absolute w-full px-4 ${inputMoved ? 'bottom-0' : 'top-[50%] -translate-y-1/2'}`}>
-        <div className={`flex items-center space-x-2 h-[100px] rounded-md px-2 m-4 max-w-[850px] mx-auto ${
-            theme === 'dark' ? 'bg-gray-700' : 'bg-gray-300'
-            }`}
-        >
-        <input
-          type="text"
+    <div className={`absolute w-full px-4 bottom-[-60px] ${inputMoved ? 'md:bottom-[-140px]' : 'top-[60%] -translate-y-1/2'}`}>
+      <div className={`flex items-center space-x-2 rounded-md px-2 my-0 md:my-4 max-w-[850px] mx-auto ${
+        theme === 'dark' ? 'bg-gray-300' : 'bg-gray-300'
+      }`}>
+        
+        {/* Zamena input-a sa textarea */}
+        <textarea
+          ref={textareaRef}
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            e.target.style.height = 'auto';  
+            e.target.style.height = `${e.target.scrollHeight}px`; 
+          }}
           onKeyDown={handleKeyDown}
           placeholder={t('input.placeholder')}
-          className={`flex-grow bg-transparent rounded-md px-4 py-2 focus:ring-0 focus:ring-transparent focus:outline-none ${
-            theme === 'dark'
-              ? 'text-white placeholder-gray-400'
-              : 'text-black placeholder-gray-500'
+          className={`flex-grow bg-transparent rounded-md px-4 py-2 focus:ring-0 focus:ring-transparent focus:outline-none overflow-auto resize-none max-h-[200px] ${
+            theme === 'dark' ? 'text-white placeholder-gray-400' : 'text-black placeholder-gray-500'
           }`}
+          style={{ minHeight: "100px" }} 
         />
 
         <div className="relative group">
@@ -76,6 +81,7 @@ function ChatInput({ onSend }) {
             </span>
           )}
         </div>
+
       </div>
     </div>
   );

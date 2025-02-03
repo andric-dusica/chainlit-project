@@ -33,7 +33,7 @@ function LikeButton({ theme }) {
           theme === 'dark' ? 'tooltip-dark' : 'tooltip-light'
         }`}
       >
-        {isLiked ? t('tooltips.liked') : t('tooltips.like')}
+        {isLiked ? t('tooltips.unlike') : t('tooltips.like')}
       </span>
     </div>
   );

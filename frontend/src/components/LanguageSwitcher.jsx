@@ -40,14 +40,14 @@ function LanguageSwitcher() {
         className={`px-3 py-1 sm:px-4 sm:py-2 text-sm font-medium ${
           theme === 'dark'
             ? 'text-white bg-gray-800 hover:bg-gray-700 hover:text-white'
-            : 'text-gray-700 bg-white hover:bg-gray-100 hover:text-black'
-        } border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
+            : 'text-gray-700 bg-gray-300 hover:bg-gray-100 hover:text-black'
+        } rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
       >
         {i18n.language === 'en' ? 'Language' : 'Langue'}
       </button>
       {isOpen && (
         <ul
-          className={`absolute z-10 mt-2 w-32 sm:w-40 rounded-md ${
+          className={`absolute z-10 mt-2 w-32 sm:w-40 rounded-md top-[49px] ${
             theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-700'
           } shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
         >
