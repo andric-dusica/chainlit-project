@@ -24,6 +24,11 @@ i18n
           errors: {
             invalidEmail: "Please enter a valid email address.",
             missingFields: "Please fill out all fields."
+          },
+          theme: { 
+            light: "Light Theme",
+            dark: "Dark Theme",
+            system: "Follow System"
           }
         }
       },
@@ -46,6 +51,11 @@ i18n
           errors: {
             invalidEmail: "Veuillez entrer une adresse e-mail valide.",
             missingFields: "Veuillez remplir tous les champs."
+          },
+          theme: { 
+            light: "Thème Clair",
+            dark: "Thème Sombre",
+            system: "Suivre Système"
           }
         }
       }
@@ -56,5 +66,6 @@ i18n
       escapeValue: false
     }
   });
+
 
 export default i18n;

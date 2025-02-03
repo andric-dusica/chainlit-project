@@ -17,5 +17,10 @@
   "errors": {
     "missingFields": "Veuillez remplir tous les champs",
     "invalidEmail": "Veuillez entrer une adresse e-mail valide."
+  },
+  "theme": {
+    "dark": "Thème sombre",
+    "light": "Thème clair",
+    "system": "Suivre le système"
   }
 }

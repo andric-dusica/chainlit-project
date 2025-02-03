@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import SunIcon from '../assets/icons/light.svg';
 import MoonIcon from '../assets/icons/dark.svg';
 
 function ThemeSwitcher({ currentTheme, onThemeChange }) {
+  const { t } = useTranslation(); 
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -45,7 +47,7 @@ function ThemeSwitcher({ currentTheme, onThemeChange }) {
                 currentTheme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-200'
             }`}
             >
-            Light Theme
+             {t('theme.light')}
             </li>
             <li
             onClick={() => {
@@ -56,7 +58,7 @@ function ThemeSwitcher({ currentTheme, onThemeChange }) {
                 currentTheme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-200'
             }`}
             >
-            Dark Theme
+            {t('theme.dark')}
             </li>
             <li
             onClick={() => {
@@ -67,7 +69,7 @@ function ThemeSwitcher({ currentTheme, onThemeChange }) {
                 currentTheme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-200'
             }`}
             >
-            Follow System
+            {t('theme.system')}
             </li>
         </ul>
         )}
