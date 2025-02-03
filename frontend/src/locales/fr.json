@@ -4,7 +4,11 @@
     "language": "Langue"
   },
   "buttons": {
-    "openLogin": "Ouvrir le modal de connexion"
+    "openLogin": "Ouvrir le modal de connexion",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "copySuccess": "Copié!",
+    "inputPlaceholder": "Tapez votre message ici..."
   },
   "auth": {
     "loginTitle": "Connexion",
@@ -22,5 +26,8 @@
     "dark": "Thème sombre",
     "light": "Thème clair",
     "system": "Suivre le système"
+  },
+  "messages": {
+    "copySuccess": "Copié !"
   }
 }

@@ -11,7 +11,9 @@ i18n
             title: "My Application"
           },
           buttons: {
-            openLogin: "Open Login Modal"
+            openLogin: "Open Login Modal",
+            save: "Save",
+            cancel: "Cancel"
           },
           auth: {
             loginTitle: "Login",
@@ -29,6 +31,12 @@ i18n
             light: "Light Theme",
             dark: "Dark Theme",
             system: "Follow System"
+          },
+          input: {
+            placeholder: "Type your message here..."
+          },
+          copy: {
+            copied: "Copied!"
           }
         }
       },
@@ -38,7 +46,9 @@ i18n
             title: "Mon Application"
           },
           buttons: {
-            openLogin: "Ouvrir le modal de connexion"
+            openLogin: "Ouvrir le modal de connexion",
+            save: "Enregistrer",
+            cancel: "Annuler"
           },
           auth: {
             loginTitle: "Connexion",
@@ -56,6 +66,12 @@ i18n
             light: "Thème Clair",
             dark: "Thème Sombre",
             system: "Suivre Système"
+          },
+          input: {
+            placeholder: "Tapez votre message ici..."
+          },
+          copy: {
+            copied: "Copié!"
           }
         }
       }
@@ -68,4 +84,4 @@ i18n
   });
 
 
-export default i18n;
+  export default i18n;

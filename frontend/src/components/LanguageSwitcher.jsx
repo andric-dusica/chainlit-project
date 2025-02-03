@@ -25,7 +25,7 @@ function LanguageSwitcher() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-
+  
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language');
     if (savedLanguage) {
@@ -37,7 +37,7 @@ function LanguageSwitcher() {
     <div ref={dropdownRef} className="relative inline-block">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`px-4 py-2 text-sm font-medium ${
+        className={`px-3 py-1 sm:px-4 sm:py-2 text-sm font-medium ${
           theme === 'dark'
             ? 'text-white bg-gray-800 hover:bg-gray-700 hover:text-white'
             : 'text-gray-700 bg-white hover:bg-gray-100 hover:text-black'
@@ -47,33 +47,27 @@ function LanguageSwitcher() {
       </button>
       {isOpen && (
         <ul
-        className={`absolute z-10 mt-2 w-40 rounded-md ${
-          theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-700'
-        } shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="menu-button"
-        tabIndex="-1"
+          className={`absolute z-10 mt-2 w-32 sm:w-40 rounded-md ${
+            theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-700'
+          } shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
         >
-        <li
-          onClick={() => changeLanguage('en')}
-          className={`block px-4 py-2 text-sm cursor-pointer rounded-t-md ${
-            theme === 'dark' ? 'hover:bg-gray-700 hover:text-white' : 'hover:bg-gray-200 hover:text-black'
-          }`}
-          role="menuitem"
-        >
-          English
-        </li>
-        <li
-          onClick={() => changeLanguage('fr')}
-          className={`block px-4 py-2 text-sm cursor-pointer rounded-b-md ${
-            theme === 'dark' ? 'hover:bg-gray-700 hover:text-white' : 'hover:bg-gray-200 hover:text-black'
-          }`}
-          role="menuitem"
-        >
-          French
-        </li>
-      </ul>
+          <li
+            onClick={() => changeLanguage('en')}
+            className={`px-3 py-1 sm:px-4 sm:py-2 text-sm cursor-pointer rounded-t-md ${
+              theme === 'dark' ? 'hover:bg-gray-700 hover:text-white' : 'hover:bg-gray-200 hover:text-black'
+            }`}
+          >
+            English
+          </li>
+          <li
+            onClick={() => changeLanguage('fr')}
+            className={`px-3 py-1 sm:px-4 sm:py-2 text-sm cursor-pointer rounded-b-md ${
+              theme === 'dark' ? 'hover:bg-gray-700 hover:text-white' : 'hover:bg-gray-200 hover:text-black'
+            }`}
+          >
+            French
+          </li>
+        </ul>
       )}
     </div>
   );

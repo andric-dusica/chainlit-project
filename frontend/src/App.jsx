@@ -4,6 +4,7 @@ import './config/i18n';
 import LoginModal from './components/LoginModal';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ThemeSwitcher from './components/ThemeSwitcher';
+import Chat from './components/chat/Chat';
 
 export const ThemeContext = createContext();
 
@@ -12,7 +13,7 @@ function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme : 'light'; 
+    return savedTheme ? savedTheme : 'light';
   });
 
   useEffect(() => {
@@ -23,7 +24,6 @@ function App() {
   }, [i18n]);
 
   useEffect(() => {
-    console.log('Tema se menja:', theme);
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
@@ -40,18 +40,19 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme: handleThemeChange }}>
       <div className={`min-h-screen ${theme === 'light' ? 'bg-gray-50 text-black' : 'bg-gray-900 text-white'} flex flex-col items-center p-4`}>
-        <header className="relative inline-block mb-8 flex gap-4">
+        <header className="relative inline-block mb-4 flex gap-4 flex-col sm:flex-row">
           <LanguageSwitcher />
           <ThemeSwitcher onThemeChange={handleThemeChange} currentTheme={theme} />
         </header>
-        <main className="text-center">
-          <h1 className="text-3xl font-bold">{t('header.title')}</h1>
+        <main className="text-center w-full max-w-[850px]">
+          <h1 className="text-2xl sm:text-3xl font-bold">{t('header.title')}</h1>
           <button
             onClick={() => setIsLoginOpen(true)}
-            className="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-md"
+            className="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-md text-sm sm:text-base"
           >
             {t('buttons.openLogin')}
           </button>
+          <Chat />
         </main>
         <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
       </div>

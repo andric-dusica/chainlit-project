@@ -4,7 +4,11 @@
     "language": "Language"
   },
   "buttons": {
-    "openLogin": "Open Login Modal"
+    "openLogin": "Open Login Modal",
+    "save": "Save",
+    "cancel": "Cancel",
+    "copySuccess": "Copied!",
+    "inputPlaceholder": "Type your message here..."
   },
   "auth": {
     "loginTitle": "Login",
@@ -22,5 +26,8 @@
     "dark": "Dark Theme",
     "light": "Light Theme",
     "system": "Follow System"
+  },
+  "messages": {
+    "copySuccess": "Copied!"
   }
 }
