@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ThemeContext } from '../App'; 
 
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useContext(ThemeContext);
+  const dropdownRef = useRef(null);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -12,46 +15,65 @@ function LanguageSwitcher() {
   };
 
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
     const savedLanguage = localStorage.getItem('language');
-    console.log('Saved language:', savedLanguage);
     if (savedLanguage) {
       i18n.changeLanguage(savedLanguage);
     }
   }, [i18n]);
-  
-  
 
   return (
-    <div className="relative inline-block">
+    <div ref={dropdownRef} className="relative inline-block">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        className={`px-4 py-2 text-sm font-medium ${
+          theme === 'dark'
+            ? 'text-white bg-gray-800 hover:bg-gray-700 hover:text-white'
+            : 'text-gray-700 bg-white hover:bg-gray-100 hover:text-black'
+        } border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
       >
         {i18n.language === 'en' ? 'Language' : 'Langue'}
       </button>
       {isOpen && (
         <ul
-          className="absolute z-10 mt-2 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="menu-button"
-          tabIndex="-1"
+        className={`absolute z-10 mt-2 w-40 rounded-md ${
+          theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-700'
+        } shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="menu-button"
+        tabIndex="-1"
         >
-          <li
-            onClick={() => changeLanguage('en')}
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
-            role="menuitem"
-          >
-            English
-          </li>
-          <li
-            onClick={() => changeLanguage('fr')}
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
-            role="menuitem"
-          >
-            French
-          </li>
-        </ul>
+        <li
+          onClick={() => changeLanguage('en')}
+          className={`block px-4 py-2 text-sm cursor-pointer rounded-t-md ${
+            theme === 'dark' ? 'hover:bg-gray-700 hover:text-white' : 'hover:bg-gray-200 hover:text-black'
+          }`}
+          role="menuitem"
+        >
+          English
+        </li>
+        <li
+          onClick={() => changeLanguage('fr')}
+          className={`block px-4 py-2 text-sm cursor-pointer rounded-b-md ${
+            theme === 'dark' ? 'hover:bg-gray-700 hover:text-white' : 'hover:bg-gray-200 hover:text-black'
+          }`}
+          role="menuitem"
+        >
+          French
+        </li>
+      </ul>
       )}
     </div>
   );
