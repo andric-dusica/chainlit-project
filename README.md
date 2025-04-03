@@ -1,96 +1,113 @@
-Chainlit Chat Application
+# 💬 Chainlit Chat Application
 
-Installation
+A custom, user-friendly chat interface built on **Chainlit** with multi-language support, theme toggle, and advanced chat features. Designed for seamless UX, real-time responses, and clean, accessible UI.
 
-Clone the repository:
-git clone https://github.com/andric-dusica/chainlit-project.git
+---
 
-cd frontend 
+## 🚀 Live Demo
+
+👉 Coming soon (or insert your link here)
+
+---
+
+## 🧠 Overview
+
+This project is a modern chat interface with:
+
+- 🌐 **Language Switching**  
+  Instantly switch between languages with UI updates in real-time. Language preference is saved across sessions.
+
+- 💡 **Streaming Responses**  
+  Messages appear word-by-word from the backend for a realistic chat experience.
+
+- ✏️ **Edit & Resend**  
+  Modify previously sent messages and resubmit them easily.
+
+- 💬 **Copy & Like Messages**  
+  Users can quickly copy text or like messages with visual feedback.
+
+- 🌙 **Theme Toggle**  
+  Switch between light and dark modes—your preference is remembered.
+
+---
+
+## 🧩 Features
+
+- 🈳 **Multi-language support (i18n)**  
+  All labels, messages, and UI elements update dynamically.
+
+- 🌗 **Dark/Light Theme**  
+  Fully responsive design that instantly adapts to your selected mode.
+
+- ⚡ **Real-time interaction**  
+  Smooth, flicker-free message streaming.
+
+- 🧱 **Modular & Clean Code**  
+  Built with reusable React components and best practices.
+
+---
+
+## 🔧 Installation
+
+1. Clone the repository:
+ ```bash
+   git clone https://github.com/andric-dusica/chainlit-project.git
+   cd frontend
 
 Install dependencies: 
 
-npm install 
-
+npm install
 npm install vite --save-dev
-
 npm install i18next react-i18next
 
 
-Run the development server:
-
+Start the development server:
 npm run dev
 
-Open your browser: Visit http://localhost:5173/ to see the application in action.
+Open in browser:
+👉 http://localhost:5173
 
-Overview
-This project is a custom chat interface built on the Chainlit framework. It features multi-language support, theme toggling, and user-friendly chat functionalities like message editing, streaming responses, and more. The goal is to deliver a seamless, accessible, and visually consistent chat experience.
+##⚙️ Build
+To generate a production-ready build:
+npm run build
 
-Features
-Language Switcher
+##🌍 Tech Stack
+⚛️ React – UI framework
 
-- A dropdown button in the header allows users to switch between multiple languages.
-- The selected language persists across page reloads, dynamically updating all UI text in real-time.
+🧠 Chainlit – Backend + chat stream handling
 
-Custom Chat Interface
-- Streaming Responses: Messages from the backend are displayed word-by-word as they arrive.
-- Edit & Resend: Users can modify sent messages and resubmit them.
-- Copy & Like Messages: Users can copy text and “like” messages with immediate visual feedback.
+🌐 i18next – Internationalization
 
-Theme Toggle
-- A simple button lets users switch between light and dark modes.
-- The entire interface adapts to the selected theme instantly, without delays or inconsistencies.
+🎨 Tailwind CSS – Fast, utility-first styling
 
-Localization Compliance
-- All UI text—including buttons, labels, and error messages—is sourced from language files, ensuring seamless localization and ease of translation.
+💾 localStorage – Stores language & theme preferences
 
+⚡ Vite – Lightning-fast bundler with HMR
 
-Technical Highlights
-Language System
-- Built-in support for i18n ensures all text reflects the current language setting.
-- Persistent language preference stored in localStorage.
+##💡 Usage Guide
+🌐 Switch Language
+Click the language selector in the header.
 
-Performance & User Experience
-- Instantaneous updates when switching languages or themes.
-- No flickering or lag during streaming responses.
+🌙 Toggle Theme
+Use the moon/sun button to switch between dark and light mode.
 
-Modern Code Practices
-- Clean React component structure.
-- Modular and reusable logic, making it easy to extend or adjust the UI.
-- Adherence to best practices for readability and maintainability.
+💬 Chat
+Type your message, stream responses, edit & resend, copy, and like messages with one click.
 
-Getting Started
-Prerequisites
-- Node.js: Make sure you have Node.js 16+ installed.
-- npm or yarn: Either package manager can be used for dependency management.
+##📁 Project Structure
+chainlit-project/
+├── frontend/
+│   ├── public/                # Static files
+│   ├── src/
+│   │   ├── components/        # Reusable UI components
+│   │   ├── i18n/              # Language JSON files
+│   │   ├── pages/             # App pages (e.g., Chat)
+│   │   ├── App.jsx            # Main React component
+│   │   ├── main.jsx           # React root entry
+│   ├── tailwind.config.js     # Tailwind CSS config
+│   ├── vite.config.js         # Vite bundler config
+│   └── index.html             # App HTML entry
+└── ...
 
-Usage
-1. Switch Languages:
-Click on the language button in the header and select a language to instantly update all UI text.
-
-2. Toggle Theme:
-Use the theme toggle button to switch between light and dark modes.
-
-3. Chat:
-Type messages and send them. The chat will display streaming responses.
-Edit and resend messages using the provided edit button.
-Copy or like messages with a single click.
-
-Technical Stack
-- React: Core framework for building the UI.
-- Chainlit: Provides underlying chat and language features.
-- i18n: Handles language translations and localization.
-- Tailwind CSS: Offers rapid styling and consistent design.
-- LocalStorage: Stores language and theme preferences for persistence.
-
-This README covers the essential information for understanding, running, and extending the project. It’s designed to be straightforward, making it easy for developers to jump into the codebase, understand the structure, and start contributing.
-
-
-
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##📄 License
+MIT – feel free to use and build on it!
