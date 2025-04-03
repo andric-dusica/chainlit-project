@@ -90,7 +90,7 @@ Use the sun/moon icon to switch between light and dark mode. The app will rememb
 - Edit any sent message and resend it.  
 - Click the heart to like a message or the copy icon to copy text instantly.
 
-
+```bash
 chainlit-project/
 ├── frontend/
 │   ├── public/                # Static files (images, etc.)
@@ -103,8 +103,7 @@ chainlit-project/
 │   ├── tailwind.config.js     # Tailwind CSS configuration
 │   ├── vite.config.js         # Vite bundler configuration
 │   └── index.html             # HTML entry file
-
-
+```
 ## 🧠 Tech Stack
 
 🟣 **React** – UI framework  
