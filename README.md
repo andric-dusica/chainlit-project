@@ -5,6 +5,15 @@ Designed for seamless UX, real-time responses, and clean, accessible UI.
 
 ---
 
+## 🧠 Tech Stack
+
+🟣 **React** – UI framework  
+🧠 **Chainlit** – Backend + chat stream handling  
+🌐 **i18next** – Internationalization  
+🎨 **Tailwind CSS** – Utility-first styling  
+💾 **localStorage** – Stores language & theme preferences  
+⚡ **Vite** – Lightning-fast bundler with HMR
+
 ## 🧠 Overview
 
 This project is a modern chat interface with:
@@ -104,14 +113,7 @@ chainlit-project/
 │   ├── vite.config.js         # Vite bundler configuration
 │   └── index.html             # HTML entry file
 ```
-## 🧠 Tech Stack
 
-🟣 **React** – UI framework  
-🧠 **Chainlit** – Backend + chat stream handling  
-🌐 **i18next** – Internationalization  
-🎨 **Tailwind CSS** – Utility-first styling  
-💾 **localStorage** – Stores language & theme preferences  
-⚡ **Vite** – Lightning-fast bundler with HMR
 
 ## 📄 License
 
